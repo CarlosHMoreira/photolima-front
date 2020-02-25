@@ -1,11 +1,19 @@
 import React from 'react';
-
 import {
-  BrowserRouter as Router, Switch, Route, Link,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
 } from 'react-router-dom';
+
+import { GlobalStyles } from 'ui';
+
 
 export default () => (
   <Router>
+
+    <GlobalStyles />
+
     <div>
       <h1>Logo</h1>
       <nav>
