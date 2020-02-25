@@ -14,7 +14,7 @@ const Header = ({ children }) => (
 
     <LogoContainer>
       <CameraIcon />
-      <Title>Pics</Title>
+      <Title>PhotoLima</Title>
     </LogoContainer>
 
     {children && <NavContainer>children</NavContainer>}

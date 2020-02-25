@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Sizes, Animations } from 'ui';
+import { Sizes, Animations, ZIndex } from 'ui';
 import { pxToRem } from 'helpers/Converters';
 
 
@@ -10,6 +10,8 @@ export const HeaderStyled = styled.header`
   padding: 5px;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: ${ZIndex.HeaderFixed};
 `;
 
 export const NavContainer = styled.nav`
@@ -22,7 +24,10 @@ export const Title = styled.h1`
   position: relative;
   display: inline-block;
   top: -20px;
-  margin: 0
+  margin: 0;
+  color: ${({ theme }) => theme.primary};
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: ${({ theme }) => theme.text};
 `;
 
 export const LogoContainer = styled.div`

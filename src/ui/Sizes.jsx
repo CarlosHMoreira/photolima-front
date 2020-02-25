@@ -5,4 +5,5 @@ export default {
   s4: 30,
   s5: 36,
   s6: 48,
+  s7: 72,
 };
