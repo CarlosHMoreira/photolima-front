@@ -9,7 +9,6 @@ import {
 } from './Styled';
 
 const Header = ({ children }) => (
-
   <HeaderStyled>
 
     <LogoContainer>

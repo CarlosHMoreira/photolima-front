@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  ServiceListItem,
   ServiceArticle,
   ServiceHeader,
   ServiceTitle,
@@ -32,18 +33,20 @@ const services = [
 ];
 
 export const Service = ({ icon: Icon, title, text }) => (
-  <ServiceArticle>
+  <ServiceListItem>
+    <ServiceArticle>
 
-    <ServiceHeader>
-      <Icon />
-      <ServiceTitle>{title}</ServiceTitle>
-    </ServiceHeader>
+      <ServiceHeader>
+        <Icon />
+        <ServiceTitle>{title}</ServiceTitle>
+      </ServiceHeader>
 
-    <ServiceText>
-      {text}
-    </ServiceText>
+      <ServiceText>
+        {text}
+      </ServiceText>
 
-  </ServiceArticle>
+    </ServiceArticle>
+  </ServiceListItem>
 );
 
 const ServicesAvailable = () => (

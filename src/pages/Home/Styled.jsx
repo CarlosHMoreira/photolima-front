@@ -35,6 +35,11 @@ export const iconResizer = (toStyle) => styled(toStyle)`
   height: ${pxToRem(100)};
 `;
 
+export const ServiceListItem = styled.li`
+  max-width: 550px;
+  margin: 0 auto;
+`;
+
 export const ServiceArticle = styled.article`
   margin: ${Sizes.s1} 0;
   border: 3px solid ${({ theme }) => theme.secondary};
@@ -53,10 +58,10 @@ export const ServiceTitle = styled.h1`
 `;
 
 export const ServiceText = styled.p`
-  padding: ${pxToRem(Sizes.s1)}
+  padding: ${pxToRem(Sizes.s1)};
 `;
 
 export const ServiceList = styled.ul`
   list-style: none;
-  padding: ${pxToRem(5)}
+  padding: ${pxToRem(5)};
 `;
