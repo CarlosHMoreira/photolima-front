@@ -1,17 +1,57 @@
 import React from 'react';
-import WeddingCakeImg from 'images/wedding-cake.svg';
+
+import {
+  ServiceArticle,
+  ServiceHeader,
+  ServiceTitle,
+  ServiceText,
+  ServiceList,
+  iconResizer,
+} from './Styled';
+
+import WeddingCakeSvg from 'images/wedding-cake.svg';
+import WeddingDateSvg from 'images/wedding-date.svg';
+import WeddingRingSvg from 'images/wedding-rings.svg';
+
+const services = [
+  {
+    icon: iconResizer(WeddingCakeSvg),
+    title: 'Aniversário de 15 anos',
+    text: 'Relembrar é viver, então tenha em mãos suas memórias com as cores mais vivas quanto as daquele momento.',
+  },
+  {
+    icon: iconResizer(WeddingDateSvg),
+    title: 'Recém Nascido',
+    text: 'Grave a imagem do seu melequento enquanto ainda tá bonitinho.',
+  },
+  {
+    icon: iconResizer(WeddingRingSvg),
+    title: 'Casamentos',
+    text: 'Fotografo esse momento mágico e memorável, antes que se arrependam.',
+  },
+];
+
+export const Service = ({ icon: Icon, title, text }) => (
+  <ServiceArticle>
+
+    <ServiceHeader>
+      <Icon />
+      <ServiceTitle>{title}</ServiceTitle>
+    </ServiceHeader>
+
+    <ServiceText>
+      {text}
+    </ServiceText>
+
+  </ServiceArticle>
+);
 
 const ServicesAvailable = () => (
-  <article>
-    <header>
-      <img src={WeddingCakeImg} alt="Bolo de casamento" />
-      <h1>Aniversário de 15 anos</h1>
-    </header>
-    <p>
-      Relembrar é viver, então tenha em mãos suas memórias em v
-    </p>
-
-  </article>
+  <ServiceList>
+    {
+      services.map(({ icon, title, text }) => <Service icon={icon} title={title} text={text} />)
+    }
+  </ServiceList>
 );
 
 export default ServicesAvailable;

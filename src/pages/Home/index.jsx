@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Img, Article, Title } from './Styled';
+import {
+  Img, Article, Title,
+} from './Styled';
 import BannerImg from 'images/banner.jpg';
 import ServicesAvailable from './ServicesAvailable';
 

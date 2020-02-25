@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { pxToRem } from 'helpers/Converters';
 import { Sizes, ZIndex } from 'ui';
 
+
 export const Img = styled.img`
   width: 100%;
   filter: brightness(90%);
@@ -27,4 +28,35 @@ export const Title = styled.h1`
   @media screen and (min-width:818px) {
     font-size: ${pxToRem(Sizes.s7)};
   }
+`;
+
+export const iconResizer = (toStyle) => styled(toStyle)`
+  width: ${pxToRem(100)};
+  height: ${pxToRem(100)};
+`;
+
+export const ServiceArticle = styled.article`
+  margin: ${Sizes.s1} 0;
+  border: 3px solid ${({ theme }) => theme.secondary};
+  border-radius: 5%;
+  background-color: ${({ theme }) => theme.primary};
+`;
+
+export const ServiceHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const ServiceTitle = styled.h1`
+  font-size: ${pxToRem(Sizes.s4)};
+`;
+
+export const ServiceText = styled.p`
+  padding: ${pxToRem(Sizes.s1)}
+`;
+
+export const ServiceList = styled.ul`
+  list-style: none;
+  padding: ${pxToRem(5)}
 `;
