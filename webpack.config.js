@@ -19,8 +19,12 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpg|gif)$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -32,6 +36,10 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       ui: path.resolve(__dirname, 'src', 'ui'),
+      components: path.resolve(__dirname, 'src', 'components'),
+      layouts: path.resolve(__dirname, 'src', 'layouts'),
+      pages: path.resolve(__dirname, 'src', 'pages'),
+      helpers: path.resolve(__dirname, 'src', 'helpers'),
       images: path.resolve(__dirname, 'src', 'assets', 'images'),
       fonts: path.resolve(__dirname, 'src', 'assets', 'fonts'),
     },
