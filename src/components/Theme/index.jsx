@@ -3,8 +3,15 @@ import { ThemeProvider } from 'styled-components';
 
 import { Themes } from 'ui';
 
-const isDarkTheme = false;
-const theme = isDarkTheme ? Themes.dark : Themes.themeDefault;
+const shouldUseDarkTheme = () => {
+  const now = new Date();
+  const alreadyNight = new Date();
+  alreadyNight.setHours(18, 0, 0);
+
+  return now >= alreadyNight;
+};
+
+const theme = shouldUseDarkTheme() ? Themes.dark : Themes.themeDefault;
 
 const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>
