@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useState, useEffect, useRef } from 'react';
 
 import CameraIcon from 'images/camera.svg';
 import {
@@ -8,17 +8,30 @@ import {
   NavContainer,
 } from './Styled';
 
-const Header = ({ children }) => (
-  <HeaderStyled>
+const Header = memo(({ children, changeColorScrollY }) => {
+  const [isTransparent, setIsTransparent] = useState(true);
 
-    <LogoContainer>
-      <CameraIcon />
-      <Title>PhotoLima</Title>
-    </LogoContainer>
+  const handleOnScroll = () => setIsTransparent(window.screenY > changeColorScrollY);
 
-    {children && <NavContainer>children</NavContainer>}
+  if (changeColorScrollY) {
+    useEffect(() => {
+      window.addEventListener('scroll', handleOnScroll);
+      return () => window.removeEventListener('scroll', handleOnScroll);
+    });
+  }
 
-  </HeaderStyled>
-);
+
+  return (
+    <HeaderStyled isTransparent={isTransparent}>
+      <LogoContainer>
+        <CameraIcon />
+        <Title>PhotoLima</Title>
+      </LogoContainer>
+
+      {children && <NavContainer>children</NavContainer>}
+
+    </HeaderStyled>
+  );
+});
 
 export default Header;

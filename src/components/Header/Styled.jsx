@@ -12,6 +12,11 @@ export const HeaderStyled = styled.header`
   justify-content: space-between;
   position: fixed;
   z-index: ${ZIndex.HeaderFixed};
+  background-color: ${
+  ({ isTransparent, theme }) => (isTransparent
+    ? 'transparent'
+    : theme.secondaryLight)
+};
 `;
 
 export const NavContainer = styled.nav`
