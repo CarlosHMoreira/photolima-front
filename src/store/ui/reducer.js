@@ -2,8 +2,6 @@ import * as actions from './actionTypes';
 
 const initialState = {
   theme: 'default',
-  headerBgColorType: 'transparent',
-  homeBannerHeightEnd: null,
 };
 
 export default (state = initialState, action) => {
