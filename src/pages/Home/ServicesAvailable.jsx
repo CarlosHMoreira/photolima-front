@@ -52,7 +52,9 @@ export const Service = ({ icon: Icon, title, text }) => (
 const ServicesAvailable = () => (
   <ServiceList>
     {
-      services.map(({ icon, title, text }) => <Service icon={icon} title={title} text={text} />)
+      services.map(({ icon, title, text }) => (
+        <Service icon={icon} title={title} text={text} key={title} />
+      ))
     }
   </ServiceList>
 );
