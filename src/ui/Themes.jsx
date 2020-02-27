@@ -18,7 +18,11 @@ export const dark = {
   secondaryDark: '#12005e',
 };
 
-export default {
-  dark,
-  themeDefault,
-};
+const themes = new Map([
+  ['dark', dark],
+  ['default', themeDefault],
+]);
+
+export const getThemeByNameOrDefault = (themeName) => (themes.get(themeName) || themes.get('default'));
+
+export default themes;
