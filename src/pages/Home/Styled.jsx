@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { pxToRem } from 'helpers/Converters';
+import { pxToRem } from 'helpers/converters';
 import { Sizes, ZIndex } from 'ui';
 
 
