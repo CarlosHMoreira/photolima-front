@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Sizes, Animations, ZIndex } from 'ui';
-import { pxToRem } from 'helpers/Converters';
+import { pxToRem } from 'helpers/converters';
 
 
 export const HeaderStyled = styled.header`
@@ -17,6 +17,8 @@ export const HeaderStyled = styled.header`
     ? 'transparent'
     : theme.secondaryLight)
 };
+  transition: background-color .5s ease-in-out;
+  will-change: background-color;
 `;
 
 export const NavContainer = styled.nav`

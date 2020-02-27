@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import CameraIcon from 'images/camera.svg';
 import {
@@ -8,17 +8,17 @@ import {
   NavContainer,
 } from './Styled';
 
-const Header = memo(({ children, changeColorScrollY }) => {
+import { throttle } from 'helpers/composers';
+
+const Header = ({ children }) => {
   const [isTransparent, setIsTransparent] = useState(true);
 
-  const handleOnScroll = () => setIsTransparent(window.screenY > changeColorScrollY);
+  const handleOnScroll = throttle(() => setIsTransparent(window.scrollY < 20), 1000);
 
-  if (changeColorScrollY) {
-    useEffect(() => {
-      window.addEventListener('scroll', handleOnScroll);
-      return () => window.removeEventListener('scroll', handleOnScroll);
-    });
-  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleOnScroll);
+    return () => window.removeEventListener('scroll', handleOnScroll);
+  });
 
 
   return (
@@ -32,6 +32,6 @@ const Header = memo(({ children, changeColorScrollY }) => {
 
     </HeaderStyled>
   );
-});
+};
 
 export default Header;
