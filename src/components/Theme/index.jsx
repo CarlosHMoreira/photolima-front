@@ -1,22 +1,15 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { connect } from 'react-redux';
 
-import { Themes } from 'ui';
+import { getThemeByNameOrDefault } from 'ui/Themes';
 
-const shouldUseDarkTheme = () => {
-  const now = new Date();
-  const alreadyNight = new Date();
-  alreadyNight.setHours(18, 0, 0);
-
-  return now >= alreadyNight;
-};
-
-const theme = shouldUseDarkTheme() ? Themes.dark : Themes.themeDefault;
-
-const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>
+const Theme = ({ children, theme }) => (
+  <ThemeProvider theme={getThemeByNameOrDefault(theme)}>
     {children}
   </ThemeProvider>
 );
 
-export default Theme;
+const mapStateToProps = ({ ui: { theme } }) => ({ theme });
+
+export default connect(mapStateToProps)(Theme);
