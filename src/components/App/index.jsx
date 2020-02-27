@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import store from 'store';
 import { GlobalStyles } from 'ui';
 import Theme from '../Theme';
 
@@ -16,20 +17,22 @@ import { Home } from 'pages';
 
 
 export default () => (
-  <Router>
-    <Theme>
-      <GlobalStyles />
+  <Provider store={store}>
+    <Router>
+      <Theme>
+        <GlobalStyles />
 
-      <Switch>
+        <Switch>
 
-        <HomeLayout>
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </HomeLayout>
+          <HomeLayout>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </HomeLayout>
 
-      </Switch>
+        </Switch>
 
-    </Theme>
-  </Router>
+      </Theme>
+    </Router>
+  </Provider>
 );
