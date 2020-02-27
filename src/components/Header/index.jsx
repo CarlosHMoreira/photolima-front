@@ -13,7 +13,7 @@ import { throttle } from 'helpers/composers';
 const Header = ({ children }) => {
   const [isTransparent, setIsTransparent] = useState(true);
 
-  const handleOnScroll = throttle(() => setIsTransparent(window.scrollY < 20), 1000);
+  const handleOnScroll = throttle(() => setIsTransparent(window.scrollY < 20), 700);
 
   useEffect(() => {
     window.addEventListener('scroll', handleOnScroll);
