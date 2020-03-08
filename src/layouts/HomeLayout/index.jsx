@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 
 const HomeLayout = ({ children }) => (
   <>
-    <Header />
+    <Header changeBgColor />
     <main>
       { children }
     </main>
