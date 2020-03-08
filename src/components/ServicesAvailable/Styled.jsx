@@ -11,13 +11,26 @@ export const iconResizer = (toStyle) => styled(toStyle)`
 export const ServiceList = styled.ul`
   list-style: none;
   padding: ${pxToRem(5)};
+  max-width: 550px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1120px) {
+    max-width: 1120px;
+  }
+
+  @media screen and (min-width: 1680px) {
+    max-width: 1680px;
+  }
 `;
 
 export const ServiceListItem = styled.li`
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
   max-width: 550px;
   min-width: 300px;
   height: 215px;
-  margin: 0 auto;
+  margin: 5px;
 `;
 
 export const ServiceArticle = styled.article`
