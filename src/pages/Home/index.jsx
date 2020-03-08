@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Banner from './Banner';
-import ServicesAvailable from './ServicesAvailable';
+import ServicesAvailable from 'components/ServicesAvailable';
 
 const Home = () => (
   <>

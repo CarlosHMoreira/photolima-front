@@ -1,14 +1,7 @@
 import React from 'react';
 
-import {
-  ServiceListItem,
-  ServiceArticle,
-  ServiceHeader,
-  ServiceTitle,
-  ServiceText,
-  ServiceList,
-  iconResizer,
-} from './Styled';
+import { ServiceList, iconResizer } from './Styled';
+import Service from './Service';
 
 import WeddingCakeSvg from 'images/wedding-cake.svg';
 import WeddingDateSvg from 'images/wedding-date.svg';
@@ -31,23 +24,6 @@ const services = [
     text: 'Fotografo esse momento mágico e memorável, antes que se arrependam.',
   },
 ];
-
-export const Service = ({ icon: Icon, title, text }) => (
-  <ServiceListItem>
-    <ServiceArticle>
-
-      <ServiceHeader>
-        <Icon />
-        <ServiceTitle>{title}</ServiceTitle>
-      </ServiceHeader>
-
-      <ServiceText>
-        {text}
-      </ServiceText>
-
-    </ServiceArticle>
-  </ServiceListItem>
-);
 
 const ServicesAvailable = () => (
   <ServiceList>
