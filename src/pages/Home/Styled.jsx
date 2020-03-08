@@ -29,3 +29,7 @@ export const Title = styled.h1`
     font-size: ${pxToRem(Sizes.s7)};
   }
 `;
+
+export const Section = styled.section`
+  margin: 60 0;
+`;
