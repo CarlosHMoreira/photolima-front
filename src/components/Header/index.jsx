@@ -4,7 +4,7 @@ import CameraIcon from 'images/camera.svg';
 import {
   HeaderStyled,
   Title,
-  LogoContainer,
+  LogoLink,
   NavContainer,
 } from './Styled';
 
@@ -23,10 +23,10 @@ const Header = ({ children }) => {
 
   return (
     <HeaderStyled isTransparent={isTransparent}>
-      <LogoContainer>
+      <LogoLink to="/">
         <CameraIcon />
         <Title>PhotoLima</Title>
-      </LogoContainer>
+      </LogoLink>
 
       {children && <NavContainer>children</NavContainer>}
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { Sizes, Animations, ZIndex } from 'ui';
 import { pxToRem } from 'helpers/converters';
@@ -37,13 +38,13 @@ export const Title = styled.h1`
   -webkit-text-stroke-color: ${({ theme }) => theme.text};
 `;
 
-export const LogoContainer = styled.div`
+export const LogoLink = styled(Link)`
   svg {
     height: 100%;
     will-change: transform;
   }
 
   svg:hover {
-    animation: ${Animations.shakeIt} 1.5s ease-in-out;
+    animation: ${Animations.shakeIt} .5s ease-in-out;
   }
 `;
