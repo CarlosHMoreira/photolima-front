@@ -1,12 +1,23 @@
 import React from 'react';
 
-import Banner from './Banner';
 import ServicesAvailable from 'components/ServicesAvailable';
+import OutsidePhoto from 'components/OutsidePhoto';
+
+import Banner from './Banner';
+import { Section } from './Styled';
+
 
 const Home = () => (
   <>
     <Banner />
-    <ServicesAvailable />
+
+    <Section>
+      <ServicesAvailable />
+    </Section>
+
+    <Section>
+      <OutsidePhoto />
+    </Section>
   </>
 );
 
